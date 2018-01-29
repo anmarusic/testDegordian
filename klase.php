@@ -130,6 +130,9 @@ class MachineGun implements Item {
 class HealthPack implements Item {
   private $size;
   private $used = false;
+  public function __construct(){
+    $this->size = 100;
+  }
   public function use($human){
     $this->used=true;
     return $this->size;
@@ -139,7 +142,7 @@ class HealthPack implements Item {
   }
 
   public function getItemSize(){
-    $size;
+    return $this->size;
   }
 
   public function getItemType(){
